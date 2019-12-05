@@ -1,0 +1,57 @@
+{% extends "backend/base.html" %}
+{% load staticfiles %}
+{% load bootstrap4 %}
+{% block content %}
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800">Lista de Usuarios</h1>
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Apellido</th>
+                      <th>Username</th>
+                      <th>Correo</th>
+                      <th>Rol</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {% for usuario in usuarios %}
+                    <tr>
+                      <td>{{ usuario.first_name }} </td>
+                      <td>{{ usuario.last_name }} </td>
+                      <td>{{ usuario.username }} </td>
+                      <td>{{ usuario.email }} </td>
+                      <td>{{ usuario.groups }} </td>
+                      <td>
+                        <a href="#">
+                          <span class="fa fa-eye font-2xl" aria-hidden="true" title="Ver"></span>
+                        </a>
+                        <a href="#">
+                          <span class="fas fa-pencil-alt font-2xl" aria-hidden="true" title="Editar"></span>
+                        </a>
+                        <a href="#">
+                          <span class="fas fa-trash-alt font-2xl" aria-hidden="true" title="Eliminar"></span>
+                        </a>
+                      </td>
+                      {% endfor %}
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        {% endblock content %}
