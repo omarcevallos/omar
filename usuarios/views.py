@@ -15,6 +15,7 @@ def usuario_create(request):
     else:
         context = {
             'form': form,
+            'titulo': 'Crear Usuario'
         }
 
     return render(request, 'usuarios/usuario_create.html', context)
@@ -26,3 +27,24 @@ def usuario_list(request):
         'usuarios': usuarios,
     }
     return render(request, 'usuarios/usuario_list.html', context)
+
+def usuario_edit(request, pk):
+    usuario = User.objects.get(pk=pk)
+    usuario_form = UserForm(instance = usuario)
+    if request.method == "POST":
+        usuario_form = UserForm(request.POST, instance=usuario)
+        if usuario_form.is_valid():
+            usuario_form.save()
+            return redirect('usuarios:usuarios_list')
+    context = {
+        'form': usuario_form,
+        'titulo': 'Editar Usuario'
+    }
+
+    return render(request, 'usuarios/usuario_create.html', context)
+
+
+def usuario_delete(request, pk):
+    usuario = User.objects.get(pk=pk)
+    usuario.delete()
+    return redirect('usuarios:usuario_list')
