@@ -32,11 +32,10 @@
                       <td>{{ usuario.last_name }} </td>
                       <td>{{ usuario.username }} </td>
                       <td>{{ usuario.email }} </td>
-                      <td>{{ usuario.groups }} </td>
+                      {% for rol in usuario.groups.all %}
+                      <td>{{ rol }} </td>
+                      {% endfor %}
                       <td>
-                        <a href="#">
-                          <span class="fa fa-eye font-2xl" aria-hidden="true" title="Ver"></span>
-                        </a>
                         <a href="#">
                           <span class="fas fa-pencil-alt font-2xl" aria-hidden="true" title="Editar"></span>
                         </a>
