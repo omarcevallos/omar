@@ -77,7 +77,7 @@
                                   <small>{{ curso.categoria }}</small>
 
                                   <h3>
-                                       <a href="project-detail.html">
+                                       <a href="{% url 'cursos:inscripcion_curso' curso.pk %}">
                                             <span>{{ curso }}</span>
                                             <i class="fa fa-angle-right project-icon"></i>
                                        </a>

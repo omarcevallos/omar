@@ -1,0 +1,85 @@
+{% extends "frontend/base.html" %}
+{% block title %}Inscripcion{% endblock title %}
+{% load staticfiles %}
+{% load bootstrap4 %}
+{% block body %}
+     <!-- FORM INSCRIPCION -->
+     <section class="contact section-padding">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-lg-6 mx-auto col-md-7 col-12 py-5 mt-5 text-center" data-aos="fade-up">
+                      <h4 class="blog-category text-info">Kirios Net</h4>
+
+                      <h1 class="mb-4">Bienvenido al curso <strong>{{ curso }}</strong></h1>
+
+                      {# Profesor #}
+                      <div class="client-info">
+                          <div class="d-flex justify-content-center align-items-center mt-3">
+                            <img src="{% static "images/project/project-detail/male-avatar.png" %}" class="img-fluid" alt="male avatar">
+
+                            <p>{{ curso.profesor }}</p>
+                          </div>
+                      </div>
+
+                    </div>
+
+                    <div class="full-image text-center" data-aos="zoom-in">
+                      <img src="{{ curso.image.url }}" class="img-fluid" alt="blog header">
+                    </div>
+
+
+                    <!-- CURSO DETAIL -->
+                    <section class="project-detail">
+                         <div class="container">
+                              <div class="row">
+
+                                 <div class="col-lg-9 mx-auto col-md-11 col-12 my-5 pt-3" data-aos="fade-up">
+
+                                   <h2 class="mb-3">{{ curso.titulo }}.</h2>
+
+                                   <p>{{ curso.resumen }}</p>
+
+                                   <p>Requisitos:</p>
+
+                                   <ul class="list-detail py-3">
+                                     <li><span>{{ curso.requisitos }}</span></li>
+                                   </ul>
+
+                                   </div>
+                              </div>
+
+                             <div class="col-lg-8 mx-auto mb-5 pb-5 col-12" data-aos="fade-up">
+
+                               <h3 class="my-3" data-aos="fade-up">Inscríbete</h3>
+
+                               <form action="#" method="post" class="contact-form" data-aos="fade-up" data-aos-delay="300" role="form">
+                                 <div class="">
+                                   {% bootstrap_form user_form layout='horizontal' %}
+                                   {% csrf_token %}
+                                   <div class="col-lg-5 mx-auto col-7">
+                                     <button type="submit" class="form-control" id="submit-button" name="submit">Inscribirme</button>
+                                   </div>
+                                 </div>
+                               </form>
+                             </div>
+
+                         </div>
+
+                    </section>
+
+               </div>
+          </div>
+     </section>
+
+<!-- How to change your own map point
+	1. Go to Google Maps
+	2. Click on your location point
+	3. Click "Share" and choose "Embed map" tab
+	4. Copy only URL and paste it within the src="" field below
+-->
+     <div class="google-map" data-aos="zoom-in">
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13387.509145717226!2d-79.21153764856616!3d-3.9936215900024843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa9a091ab6711214c!2sKirios%20net!5e0!3m2!1ses!2sec!4v1575601649689!5m2!1ses!2sec" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+     </div>
+
+{% endblock body %}

@@ -14,3 +14,16 @@ class UserForm(forms.ModelForm):
                 'password',
                 'groups'
 				)
+
+
+class UserInscripcion(forms.ModelForm):
+    class Meta:
+        model = User
+        # fields = '__all__'
+        fields = (
+				'first_name',
+				'last_name',
+				'username',
+				'email',
+                'password',
+				)

@@ -35,7 +35,7 @@ def usuario_edit(request, pk):
         usuario_form = UserForm(request.POST, instance=usuario)
         if usuario_form.is_valid():
             usuario_form.save()
-            return redirect('usuarios:usuarios_list')
+            return redirect('usuarios:usuario_list')
     context = {
         'form': usuario_form,
         'titulo': 'Editar Usuario'
