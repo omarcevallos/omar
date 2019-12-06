@@ -41,8 +41,8 @@
 
                          <h2 class="mb-4" data-aos="fade-up">la mejor <strong>Empresa de tecnología</strong> en Loja</h2>
 
-                         <p class="mb-0" data-aos="fade-up">Venta de equipo tecnológico, mantenimiento de equipos y desarrollo de software. Revisa nuestro sitio <a href="www.kiriosnet.com">KiriosNet</a>, <a href="project-detail.html">project</a> page, and <a href="contact.html">contact</a> page.
-                         <br><br>You are <strong>allowed</strong> to use this template for commercial or non-commercial purpose. You are NOT allowed to redistribute the template ZIP file on template collection websites.</p>
+                         <p class="mb-0" data-aos="fade-up">Venta de equipo tecnológico, mantenimiento de equipos y desarrollo de software. Revisa nuestro sitio <a href="www.kiriosnet.com">KiriosNet</a>.
+                         <br><br>Estás <strong>listo</strong> para aprender y participar de esta jornada de enseñanza.</p>
                     </div>
 
                     <div class="about-image" data-aos="fade-up" data-aos-delay="200">
@@ -64,85 +64,27 @@
                <div class="col-lg-12 col-12">
 
                    <h2 class="mb-5 text-center" data-aos="fade-up">
-                       Please take a look through our
-                       <strong>featured Digital Trends</strong>
+                       A continuación puedes revisar nuestros
+                       <strong>Cursos Training Kirios</strong>
                    </h2>
 
                     <div class="owl-carousel owl-theme" id="project-slide">
-                         <div class="item project-wrapper" data-aos="fade-up" data-aos-delay="100">
-                              <img src="{% static "images/project/project-image01.jpg" %}" class="img-fluid" alt="project image">
+                        {% for curso in cursos %}
+                        <div class="item project-wrapper" data-aos="fade-up" data-aos-delay="100">
+                             <img src="{{ curso.image.url }}" class="img-fluid" alt="project image">
 
-                              <div class="project-info">
-                                   <small>Marketing</small>
+                             <div class="project-info">
+                                  <small>{{ curso.categoria }}</small>
 
-                                   <h3>
-                                        <a href="project-detail.html">
-                                             <span>Sweet Go Agency</span>
-                                             <i class="fa fa-angle-right project-icon"></i>
-                                        </a>
-                                   </h3>
-                              </div>
-                         </div>
-
-                         <div class="item project-wrapper" data-aos="fade-up">
-                              <img src="{% static "images/project/project-image02.jpg" %}" class="img-fluid" alt="project image">
-
-                              <div class="project-info">
-                                   <small>Website</small>
-
-                                   <h3>
-                                        <a href="project-detail.html">
-                                             <span>Smart Ladies</span>
-                                             <i class="fa fa-angle-right project-icon"></i>
-                                        </a>
-                                   </h3>
-                              </div>
-                         </div>
-
-                         <div class="item project-wrapper" data-aos="fade-up">
-                              <img src="{% static "images/project/project-image03.jpg" %}" class="img-fluid" alt="project image">
-
-                              <div class="project-info">
-                                   <small>Branding</small>
-
-                                   <h3>
-                                        <a href="project-detail.html">
-                                             <span>Shoes factory</span>
-                                             <i class="fa fa-angle-right project-icon"></i>
-                                        </a>
-                                   </h3>
-                              </div>
-                         </div>
-
-                         <div class="item project-wrapper" data-aos="fade-up">
-                              <img src="{% static "images/project/project-image04.jpg" %}" class="img-fluid" alt="project image">
-
-                              <div class="project-info">
-                                   <small>Social Media</small>
-
-                                   <h3>
-                                        <a href="project-detail.html">
-                                             <span>Race Bicycle</span>
-                                             <i class="fa fa-angle-right project-icon"></i>
-                                        </a>
-                                   </h3>
-                              </div>
-                         </div>
-
-                         <div class="item project-wrapper" data-aos="fade-up">
-                              <img src="{% static "images/project/project-image05.jpg" %}" class="img-fluid" alt="project image">
-
-                              <div class="project-info">
-                                   <small>Video</small>
-
-                                   <h3>
-                                        <a href="project-detail.html">
-                                             <span>Ultimate HealthCare</span>
-                                             <i class="fa fa-angle-right project-icon"></i>
-                                        </a>
-                                   </h3>
-                              </div>
-                         </div>
+                                  <h3>
+                                       <a href="project-detail.html">
+                                            <span>{{ curso }}</span>
+                                            <i class="fa fa-angle-right project-icon"></i>
+                                       </a>
+                                  </h3>
+                             </div>
+                        </div>
+                        {% endfor %}
                     </div>
                </div>
 
@@ -164,7 +106,7 @@
                </div>
 
                <div class="col-lg-6 col-md-7 col-12">
-                 <h4 class="my-5 pt-3" data-aos="fade-up" data-aos-delay="100">Client Testimonials</h4>
+                 <h4 class="my-5 pt-3" data-aos="fade-up" data-aos-delay="100">Testimonios de Clientes</h4>
 
                  <div class="quote" data-aos="fade-up" data-aos-delay="200"></div>
 
