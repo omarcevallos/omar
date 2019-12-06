@@ -11,8 +11,8 @@ class UserForm(forms.ModelForm):
 				'last_name',
 				'username',
 				'email',
+                'groups',
                 'password',
-                'groups'
 				)
 
 
@@ -27,3 +27,6 @@ class UserInscripcion(forms.ModelForm):
 				'email',
                 'password',
 				)
+        widgets = {
+        'password': forms.PasswordInput(),
+        }

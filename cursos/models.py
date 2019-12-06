@@ -18,7 +18,7 @@ class Curso(models.Model):
     profesor = models.ForeignKey(User,  on_delete=models.CASCADE)
     fecha = models.DateField()
     cupos = models.IntegerField()
-    inscritos = models.ManyToManyField(User, related_name="inscritos")
+    inscritos = models.ManyToManyField(User, related_name="inscritos", blank = True)
 
     def __str__(self):
     	return self.titulo
