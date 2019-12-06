@@ -21,7 +21,7 @@ class Curso(models.Model):
     inscritos = models.ManyToManyField(User, related_name="inscritos")
 
     def __str__(self):
-    	return self.nombre
+    	return self.titulo
 
 class Inscripcion(models.Model):
     user = models.ForeignKey(User,  on_delete=models.CASCADE)

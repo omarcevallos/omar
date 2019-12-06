@@ -11,6 +11,6 @@ class UserForm(forms.ModelForm):
 				'last_name',
 				'username',
 				'email',
+                'groups',
                 'password',
-                'groups'
 				)
